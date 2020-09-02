@@ -1,0 +1,1 @@
+C:\Users\Spencer\source\repos\MobileApp\MobileApp.UWP\MobileApp.UWP.csproj;x86

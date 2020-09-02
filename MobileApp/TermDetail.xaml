@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileApp.TermDetail">
+    <ContentPage.Content>
+        <Grid x:Name="MainNavBar" ColumnSpacing="4" RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <BoxView Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="#0d47a1"/>
+            <ImageButton Padding="5" Grid.Row="0" Grid.Column="0" Source="back.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="OnButtonClick"/>
+            <StackLayout  Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label x:Name="termTitle" TextColor="White" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="TermDetailStart" HorizontalOptions="Center" TextColor="White"/>
+                    <Label Text="-" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White"/>
+                    <Label x:Name="TermDetailEnd" HorizontalOptions="Center" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+            <Image  Margin="5" Grid.Row="0" Grid.Column="2" Source="wgu.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <ListView Grid.Row="1" Grid.ColumnSpan="3" x:Name="courseListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding CourseName}" TextColor="Black" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Status}" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <BoxView Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="#0d47a1"/>
+            <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="Center">
+                <Button Text="ADD COURSE" TextColor="White" Clicked="Add_Course_Click" BackgroundColor="Transparent"/>
+                <Button Text="EDIT TERM" TextColor="White" Clicked="Edit_Term_Click" BackgroundColor="Transparent"/>
+            </StackLayout>
+            <BoxView Grid.Row="3" Grid.ColumnSpan="3" BackgroundColor="#0d47a1"/>
+            <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" HorizontalOptions="Center">
+                <Button Text="DROP TERM" TextColor="White" Clicked="Drop_Term_Click" BackgroundColor="Transparent"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

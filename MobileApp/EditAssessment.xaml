@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileApp.EditAssessment">
+    <ContentPage.Content>
+        <Grid x:Name="MainNavBar" ColumnSpacing="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <BoxView Grid.ColumnSpan="3" Grid.Row="0" BackgroundColor="#0d47a1"/>
+            <ImageButton Padding="5" Grid.Row="0" Grid.Column="0" Source="back.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="OnButtonClick"/>
+            <Label Grid.Row="0" Grid.Column="1" Text="Edit Assessment" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Image  Margin="5" Grid.Row="0" Grid.Column="2" Source="wgu.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <TableView Grid.Row="1" Grid.ColumnSpan="3"  Margin="10,0,10,0">
+                <TableSection>
+                    <EntryCell Label="Assessment Name" x:Name="AssessmentName"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label Text="Start Date" VerticalOptions="Center"/>
+                            <DatePicker x:Name="StartDate"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label Text="End Date" VerticalOptions="Center"/>
+                            <DatePicker x:Name="EndDate"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <SwitchCell Text="Enable Notifications" x:Name="EnableNotifications"/>
+                </TableSection>
+
+            </TableView>
+            <BoxView Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="#0d47a1"/>
+            <Button Grid.Row="2" Grid.ColumnSpan="3" Text="SAVE" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Button_Clicked" BackgroundColor="Transparent"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
